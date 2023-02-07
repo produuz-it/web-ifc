@@ -27,3 +27,8 @@ jobs:
     - name: Test
       working-directory: ${{github.workspace}}/src/wasm/Build
       run: ctest -VV -C ${{matrix.configuration}} -L web-ifc
+    - name: Archive artifacts 1
+      uses: actions/upload-artifact@v3
+      with:
+        name: built-artifactrs
+        path: ${{github.workspace}}/src/wasm/Build
