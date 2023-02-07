@@ -26,10 +26,8 @@ jobs:
           npm ci
           npm run build-release
           npm run build-viewer
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
+      - name: Archive artifacts 2
+        uses: actions/upload-artifact@v3
         with:
+          name: built-artifactrs-2
           path: './examples/viewer/dist'
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v1
